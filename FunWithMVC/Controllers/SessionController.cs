@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FunWithMVC.Controllers
 {
-    // [Route("api/[controller]")]
-    // [ApiController]
+    [Route("api/[controller]")]
+    [ApiController]
     public class SessionController : Controller
     {
         [HttpGet]
@@ -28,7 +28,7 @@ namespace FunWithMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult LogIn(string username)
+        public IActionResult ChangeSessionInfo(string username)
         {
             HttpContext.Session.SetString(SessionVariables.SessionKeyUsername, username);
 

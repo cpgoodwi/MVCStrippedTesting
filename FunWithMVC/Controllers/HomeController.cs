@@ -15,6 +15,17 @@ namespace FunWithMVC.Controllers
 
         public IActionResult Index()
         {
+            
+            HttpContext.Session.SetString(SessionVariables.SessionKeyUsername, "Current User");
+            ViewData["Username"] = HttpContext.Session.GetString(SessionVariables.SessionKeyUsername);
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Index(string username)
+        {
+            HttpContext.Session.SetString(SessionVariables.SessionKeyUsername, username);
+            ViewData["Username"] = HttpContext.Session.GetString(SessionVariables.SessionKeyUsername);
             return View();
         }
 

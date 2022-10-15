@@ -10,8 +10,9 @@
 </head>
 <body>
     <header>
-        <h1>Log In Please</h1>
-        <form asp-controller="Session" asp-action="LogIn">
+        <h1>Enter name please</h1>
+        <p>@ViewData["Username"]</p>
+        <form asp-controller="Home" asp-action="Index">
             <label for="username">Username</label>
             <input id="username" name="username" type="text" />
             <button type="submit">Log In</button>
